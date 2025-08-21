@@ -47,7 +47,7 @@ void ms(int arr[],int l,int r){
 
 
 int main(){
-	for(int i=1;i<=20;i++){
+	for(int i=1;i<=100;i+=10){
 		int n = 1000000*i; // 10^6 elements
 	    int *arr = (int*) malloc(n * sizeof(int));
 	    srand(time(NULL));
