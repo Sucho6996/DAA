@@ -27,28 +27,30 @@ void qs(int arr[],int l,int r){
 	qs(arr,pi+1,r);
 }
 int main(){
-	int n = 1000000-10000; // 10^6 elements
-    int *arr = (int*) malloc(n * sizeof(int));
-    srand(time(NULL));
-    // Generate random array
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 1000000;
-    }
-	clock_t start, end;
-    double cpu_time_used;
-//	printf("Before sorting:\n");
-//    for (int i = 0; i < n; i++) {
-//        printf("%d ", arr[i]);
-//    }
-    printf("\n");
-    start=clock();
-	qs(arr,0,n-1);
-	end=clock();
-	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-//	printf("After sorting:\n");
-//	for (int i = 0; i < n; i++) {
-//        printf("%d ", arr[i]);
-//    }
-    printf("\nQuickSort took %f seconds to execute %d\n", cpu_time_used,n);
+	for(int i=1;i<=20;i++){
+		int n = 1000000*i; // 10^6 elements
+	    int *arr = (int*) malloc(n * sizeof(int));
+	    srand(time(NULL));
+	    // Generate random array
+	    for (int i = 0; i < n; i++) {
+	        arr[i] = rand() % 1000000;
+	    }
+		clock_t start, end;
+	    double cpu_time_used;
+	//	printf("Before sorting:\n");
+	//    for (int i = 0; i < n; i++) {
+	//        printf("%d ", arr[i]);
+	//    }
+	    printf("\n");
+	    start=clock();
+		qs(arr,0,n-1);
+		end=clock();
+		cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+	//	printf("After sorting:\n");
+	//	for (int i = 0; i < n; i++) {
+	//        printf("%d ", arr[i]);
+	//    }
+	    printf("\nQuickSort took %f seconds to execute %d\n", cpu_time_used,n);
+	}
 	return 0;
 }
